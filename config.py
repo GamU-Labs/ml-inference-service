@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-PORT = int(os.getenv("ML_INFERENCE_PORT", "5001"))
+PORT = int(os.getenv("ML_INFERENCE_PORT", "8998"))
 DEBUG = os.getenv("ML_INFERENCE_DEBUG", "false").lower() == "true"
 
 MODEL_DIR = os.getenv("MODEL_DIR", "models")

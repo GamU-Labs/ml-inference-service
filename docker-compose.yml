@@ -2,13 +2,13 @@ services:
     ml-inference:
         build: .
         ports:
-            - '5001:5001'
+            - '8998:8998'
         env_file:
             - .env
         volumes:
             - ./models:/app/models
         healthcheck:
-            test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5001/api/v1/health')"]
+            test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8998/api/v1/health')"]
             interval: 30s
             timeout: 10s
             retries: 3

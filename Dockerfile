@@ -7,6 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 5001
+EXPOSE 8998
 
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5001", "app:app", "--access-logfile=-"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8998", "app:app", "--access-logfile=-"]
