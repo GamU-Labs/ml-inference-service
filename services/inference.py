@@ -54,7 +54,7 @@ class InferenceService:
         top_indices = sim_scores.argsort()[::-1][:top_n]
 
         results = self.df.iloc[top_indices][
-            ["title", "rating", "desc_sentence", "tags_clean"]
+            ["app_id", "title", "rating", "desc_sentence", "tags_clean"]
         ].copy()
         results["similarity_score"] = np.round(sim_scores[top_indices], 4)
         results = results.reset_index(drop=True)
